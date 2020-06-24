@@ -48,7 +48,8 @@ export default {
         weatherDescription: '',
         currentTemperature: 0.0,
         highTemperature: 0.0,
-        lowTemperature: 0.0
+        lowTemperature: 0.0,
+        group: 'clouds'
       },
       // Flag indicating if valid weather data has been loaded
       validWeatherData: false,
@@ -68,31 +69,35 @@ export default {
         'Error! API Key needs to be loaded to use openweathermap.org!'
     }
   },
+  mounted () {
+    this.$forceUpdate()
+  },
+  updated () {
+    document.body.className = `weather-bg ${this.weatherData.group}`
+  },
   methods: {
     searchCity (inputCity) {
       // GET request for user data
-      axios
-        .get(
-          'http://api.openweathermap.org/data/2.5/weather?q=' +
+      const url = 'http://api.openweathermap.org/data/2.5/weather?q=' +
             inputCity +
-            '&units=imperial&APPID=' +
+            '&units=metric&APPID=' +
             this.openweathermapApiKey
-        )
-        .then(response => {
-          // handle success
-          // this.messageType = 'Success'
-          // this.messageToDisplay = 'SUCCESS! Weather data was retrieved for ' + response.data.name + '!'
-          console.log(response)
+      console.log(`Making request to: ${url}`)
 
-          this.weatherData.city = response.data.name
-          this.weatherData.weatherSummary = response.data.weather[0].main
-          this.weatherData.weatherDescription =
+      axios.get(url).then(response => {
+        // handle success
+        // this.messageType = 'Success'
+        // this.messageToDisplay = 'SUCCESS! Weather data was retrieved for ' + response.data.name + '!'
+        this.weatherData.city = response.data.name
+        this.weatherData.weatherSummary = response.data.weather[0].main
+        this.weatherData.weatherDescription =
             response.data.weather[0].description
-          this.weatherData.currentTemperature = response.data.main.temp
-          this.weatherData.lowTemperature = response.data.main.temp_min
-          this.weatherData.highTemperature = response.data.main.temp_max
-          this.validWeatherData = true
-        })
+        this.weatherData.currentTemperature = response.data.main.temp
+        this.weatherData.lowTemperature = response.data.main.temp_min
+        this.weatherData.highTemperature = response.data.main.temp_max
+        this.validWeatherData = true
+        this.weatherData.group = this.getWeatherGroup(response.data.weather[0].id)
+      })
         .catch(error => {
           // handle error
           this.messageType = 'Error'
@@ -113,13 +118,33 @@ export default {
         weatherDescription: '',
         currentTemperature: 0.0,
         lowTemperature: 0.0,
-        highTemperature: 0.0
+        highTemperature: 0.0,
+        group: 'clouds'
       }
       this.validWeatherData = false
     },
     clearMessage () {
       this.messageToDisplay = ''
       this.messageType = 'Info'
+    },
+    getWeatherGroup (code) {
+      let group = 'na'
+      if (code >= 200 && code < 300) {
+        group = 'thunderstorm'
+      } else if (code >= 300 && code < 400) {
+        group = 'drizzle'
+      } else if (code >= 500 && code < 600) {
+        group = 'rain'
+      } else if (code >= 600 && code < 700) {
+        group = 'snow'
+      } else if (code >= 700 && code < 800) {
+        group = 'atmosphere'
+      } else if (code === 800) {
+        group = 'clear'
+      } else if (code >= 801 && code < 900) {
+        group = 'clouds'
+      }
+      return group
     }
   }
 }
@@ -136,7 +161,6 @@ export default {
 
 body {
   background: #f1f3f5;
-  font-family: segoe ui, helvetica neue, sans-serif;
   color: #345;
   overflow-x: hidden;
 }
@@ -145,6 +169,7 @@ body {
 *******************/
 .header {
   grid-area: header;
+  padding-top: 2rem;
 }
 .banner {
   grid-area: banner;

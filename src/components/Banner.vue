@@ -37,12 +37,11 @@ export default {
 <style scoped>
 div {
   width: 100%;
-  display: inline-block;
+  display:inline-block;
   margin-bottom: 15px;
 }
 
-span,
-p {
+span, p {
   padding: 15px;
   color: white;
   width: auto;

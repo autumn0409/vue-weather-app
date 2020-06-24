@@ -17,5 +17,6 @@ export default {
 <style scoped>
 footer {
   margin: auto;
+  color:darkgray;
 }
 </style>

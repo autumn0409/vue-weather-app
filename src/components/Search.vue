@@ -5,8 +5,14 @@
     </div>
     <div class="weather-search-input">
       <label for="cityInput">City:</label>
-      <input type="text" id="cityInput" v-model="inputCity" placeholder="Enter a city name...">
-      <br>
+      <input
+        type="text"
+        id="cityInput"
+        v-model="inputCity"
+        v-on:keyup.enter="searchCity"
+        placeholder="Enter a city name..."
+      />
+      <br />
       <div class="weather-search-buttons">
         <button type="submit" v-on:click="searchCity" v-bind:disabled="searchDisabled">Search</button>
         <button type="reset" v-on:click="clearCity" v-bind:disabled="clearDisabled">Clear</button>
@@ -53,7 +59,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 /* Weather Search Styling
 *************************/
 .weather-search {
@@ -63,6 +68,7 @@ export default {
 .weather-search-title h2 {
   text-align: center;
   margin-bottom: 0.5em;
+  color: aliceblue;
 }
 
 .weather-search-buttons {
@@ -76,6 +82,7 @@ export default {
 .weather-search-input label {
   font-size: 1.35em;
   margin-right: 0.5em;
+  color: aliceblue;
 }
 
 .weather-search-input input {

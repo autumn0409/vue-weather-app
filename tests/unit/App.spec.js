@@ -241,9 +241,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
       expect(wrapper.findAll('p').at(1).text()).toMatch('City: Chicago')
       expect(wrapper.findAll('p').at(2).text()).toMatch('Summary: Cloudy')
       expect(wrapper.findAll('p').at(3).text()).toMatch('Details: Cloudy with a chance of rain')
-      expect(wrapper.findAll('p').at(4).text()).toMatch('Current: 56.3° F')
-      expect(wrapper.findAll('p').at(5).text()).toMatch('High (Today): 58.6° F')
-      expect(wrapper.findAll('p').at(6).text()).toMatch('Low (Today): 53.8° F')
+      expect(wrapper.findAll('p').at(4).text()).toMatch('Current: 56.3° C')
+      expect(wrapper.findAll('p').at(5).text()).toMatch('High (Today): 58.6° C')
+      expect(wrapper.findAll('p').at(6).text()).toMatch('Low (Today): 53.8° C')
 
       // check that the 3 buttons are enabled
       expect(wrapper.findAll('button').length).toEqual(3)

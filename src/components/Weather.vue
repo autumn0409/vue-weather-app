@@ -1,6 +1,5 @@
 <template>
   <div class="weather-results-container">
-
     <div class="weather-results-data">
       <div class="weather-results-summary">
         <div class="weather-title">
@@ -18,9 +17,9 @@
           <h2>Temperatures</h2>
         </div>
         <div class="weather-data">
-          <p><strong>Current</strong>: {{ currentTemperature }}° F</p>
-          <p><strong>High (Today)</strong>: {{ highTemperature }}° F</p>
-          <p><strong>Low (Today)</strong>: {{ lowTemperature }}° F</p>
+          <p><strong>Current</strong>: {{ currentTemperature }}° C</p>
+          <p><strong>High (Today)</strong>: {{ highTemperature }}° C</p>
+          <p><strong>Low (Today)</strong>: {{ lowTemperature }}° C</p>
         </div>
       </div>
     </div>
@@ -28,7 +27,6 @@
     <div class="weather-results-buttons">
       <button type="reset" v-on:click="clearWeather">Clear Weather Data</button>
     </div>
-
   </div>
 </template>
 
@@ -53,7 +51,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 /* Weather Results Styling
 **************************/
 .weather-results-container {
@@ -67,12 +64,14 @@ export default {
   flex-direction: row;
 }
 
-.weather-results-summary, .weather-results-temperatures {
+.weather-results-summary,
+.weather-results-temperatures {
   margin: 0 10px;
   padding: 10px;
   border-radius: 2px;
   background: #fff;
-  box-shadow: 0 6px 8px rgba(102,119,136,.03), 0 1px 2px rgba(102,119,136,.3);
+  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03),
+    0 1px 2px rgba(102, 119, 136, 0.3);
 }
 
 .weather-results-temperatures {
@@ -109,4 +108,4 @@ export default {
   color: black;
   cursor: pointer;
 }
- </style>
+</style>

@@ -21,5 +21,6 @@ header {
 
 header h1 {
   font-size: 2.5em;
+  color: aliceblue;
 }
 </style>

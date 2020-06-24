@@ -38,9 +38,9 @@ describe('Weather.vue Implementation Test', () => {
     expect(wrapper.findAll('p').at(0).text()).toMatch('City:')
     expect(wrapper.findAll('p').at(1).text()).toMatch('Summary:')
     expect(wrapper.findAll('p').at(2).text()).toMatch('Details:')
-    expect(wrapper.findAll('p').at(3).text()).toMatch('Current: 0° F')
-    expect(wrapper.findAll('p').at(4).text()).toMatch('High (Today): 0° F')
-    expect(wrapper.findAll('p').at(5).text()).toMatch('Low (Today): 0° F')
+    expect(wrapper.findAll('p').at(3).text()).toMatch('Current: 0° C')
+    expect(wrapper.findAll('p').at(4).text()).toMatch('High (Today): 0° C')
+    expect(wrapper.findAll('p').at(5).text()).toMatch('Low (Today): 0° C')
   })
 
   it('processes valid props data', () => {
@@ -72,9 +72,9 @@ describe('Weather.vue Implementation Test', () => {
     expect(wrapper.findAll('p').at(0).text()).toMatch('City: Chicago')
     expect(wrapper.findAll('p').at(1).text()).toMatch('Summary: Cloudy')
     expect(wrapper.findAll('p').at(2).text()).toMatch('Details: Cloudy with a chance of rain')
-    expect(wrapper.findAll('p').at(3).text()).toMatch('Current: 45.1° F')
-    expect(wrapper.findAll('p').at(4).text()).toMatch('High (Today): 47.7° F')
-    expect(wrapper.findAll('p').at(5).text()).toMatch('Low (Today): 42° F')
+    expect(wrapper.findAll('p').at(3).text()).toMatch('Current: 45.1° C')
+    expect(wrapper.findAll('p').at(4).text()).toMatch('High (Today): 47.7° C')
+    expect(wrapper.findAll('p').at(5).text()).toMatch('Low (Today): 42° C')
   })
 
   it('emits a custom event when the Clear Weather Data button is clicked', () => {
