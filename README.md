@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/autumn0409/vue-weather-app.svg?branch=master)](https://travis-ci.org/autumn0409/vue-weather-app)
+
 ## Overview
 
 The Vue Weather App is the application created for the following blog post on [TestDriven.io](https://testdriven.io):
@@ -56,7 +58,7 @@ $ npm -v
 Now that Node and npm are installed, we are ready to install the Vue CLI.  The installation of the Vue CLI requires administrative privileges (so you may need to run with 'sudo'):
 
 ```sh
-$ npm install -g @vue/cli
+npm install -g @vue/cli
 ```
 
 This command to install the Vue CLI is using `npm` to globally (`-g` flag) install the Vue CLI package.
@@ -66,7 +68,7 @@ This command to install the Vue CLI is using `npm` to globally (`-g` flag) insta
 > There was a significant change in the Vue CLI between v2 and v3, as the package name changed from vue-cli to @vue/cli.
 >
 > If you worked with the older version (v1.x or v2.x) of the Vue CLI in the past, you need to uninstall it first using:
->   `npm uninstall vue-cli -g`
+> `npm uninstall vue-cli -g`
 
 After the installation is complete, you can check that you have access to the `vue` command:
 
@@ -80,9 +82,9 @@ $ vue --version
 If you would like to run the Vue Weather App on your local machine, you will need to follow these instructions:
 
 ```sh
-$ git clone git@gitlab.com:patkennedy79/vue-weather-app.git
-$ cd vue-weather-app
-$ sudo npm install
+git clone git@gitlab.com:patkennedy79/vue-weather-app.git
+cd vue-weather-app
+sudo npm install
 ```
 
 The installation of the Vue CLI requires administrative privileges (so you may need to run with 'sudo').
@@ -97,15 +99,17 @@ openweathermapApiKey: ''
 ## Running the Application
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Run your unit tests
+
 ```
 npm run test:unit
 ```
 
 ## Additional Resources
 
-VueJS Documentation: https://vuejs.org/v2/guide/
+VueJS Documentation: <https://vuejs.org/v2/guide/>
