@@ -38,8 +38,7 @@ describe('Icon.vue Implementation Test', () => {
     expect(wrapper.findAll('p').at(0).text()).toMatch('')
 
     // check that data for the temperature is displayed
-    expect(wrapper.findAll('span').length).toEqual(1)
-    expect(wrapper.findAll('span').at(0).text()).toMatch('0º')
+    expect(wrapper.findAll('h1').length).toEqual(0)
   })
 
   it('processes valid props data', () => {

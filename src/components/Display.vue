@@ -2,7 +2,7 @@
   <div class="weather-display">
     <img :src="'images/w-' + group + '.png'" alt />
     <p class="description">{{ description }}</p>
-    <h1 class="temp">
+    <h1 class="temp" v-if="group != 'na'">
       <span class="display-3">{{ temp.toFixed(0) }}&ordm;</span>
       &nbsp;C
     </h1>
