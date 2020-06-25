@@ -18,6 +18,7 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
         name: 'Chicago',
         weather: [
           {
+            id: 802,
             main: 'Cloudy',
             description: 'Cloudy with a chance of rain'
           }
@@ -60,6 +61,7 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
     expect(wrapper.vm.weatherData.currentTemperature).toEqual(0)
     expect(wrapper.vm.weatherData.lowTemperature).toEqual(0)
     expect(wrapper.vm.weatherData.highTemperature).toEqual(0)
+    expect(wrapper.vm.weatherData.group).toMatch('na')
     expect(wrapper.vm.validWeatherData).toBe(false)
   })
 
@@ -77,6 +79,7 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
       expect(wrapper.vm.weatherData.currentTemperature).toEqual(56.3)
       expect(wrapper.vm.weatherData.lowTemperature).toEqual(53.8)
       expect(wrapper.vm.weatherData.highTemperature).toEqual(58.6)
+      expect(wrapper.vm.weatherData.group).toMatch('clouds')
       expect(wrapper.vm.validWeatherData).toBe(true)
     })
   })
@@ -90,7 +93,8 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
         weatherDescription: 'No clouds in the sky',
         currentTemperature: 75.5,
         highTemperature: 78.6,
-        lowTemperature: 48.9
+        lowTemperature: 48.9,
+        group: 'clear'
       },
       validWeatherData: false
     })
@@ -104,6 +108,7 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
     expect(wrapper.vm.weatherData.currentTemperature).toEqual(0)
     expect(wrapper.vm.weatherData.lowTemperature).toEqual(0)
     expect(wrapper.vm.weatherData.highTemperature).toEqual(0)
+    expect(wrapper.vm.weatherData.group).toMatch('na')
     expect(wrapper.vm.validWeatherData).toBe(false)
   })
 
@@ -154,6 +159,7 @@ describe('Implementation Test for App.vue with Failed HTTP GET', () => {
       expect(wrapper.vm.weatherData.currentTemperature).toEqual(0)
       expect(wrapper.vm.weatherData.lowTemperature).toEqual(0)
       expect(wrapper.vm.weatherData.highTemperature).toEqual(0)
+      expect(wrapper.vm.weatherData.group).toMatch('na')
       expect(wrapper.vm.validWeatherData).toBe(false)
 
       // check that the banner message indicates failure
@@ -175,6 +181,7 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
         name: 'Chicago',
         weather: [
           {
+            id: '802',
             main: 'Cloudy',
             description: 'Cloudy with a chance of rain'
           }
@@ -213,6 +220,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
 
     // check that 0 fields of weather data are displayed
     expect(wrapper.findAll('p').length).toEqual(1) // 1st element is the Banner Message
+
+    // check that background image is correctly rendered
+    expect(document.body.className).toMatch('weather-bg na')
   })
 
   it('displays the weather data for a valid search', () => {
@@ -253,6 +263,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
       expect(wrapper.findAll('button').at(0).element.disabled).toBeFalsy()
       expect(wrapper.findAll('button').at(1).element.disabled).toBeFalsy()
       expect(wrapper.findAll('button').at(1).element.disabled).toBeFalsy()
+
+      // check that background image is correctly rendered
+      expect(document.body.className).toMatch('weather-bg clouds')
     })
   })
 })
