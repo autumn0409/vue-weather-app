@@ -90,7 +90,7 @@ export default {
 }
 
 .weather-search-buttons button {
-  background-color: blue;
+  background-color: rgb(0, 162, 255);
   color: white;
   padding: 8px 16px;
   text-align: center;
