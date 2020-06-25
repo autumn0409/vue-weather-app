@@ -29,16 +29,18 @@ describe('Icon.vue Implementation Test', () => {
     expect(wrapper.vm.description).toMatch('')
     expect(wrapper.vm.temp).toBe(0.0)
 
-    // check that image is correctly rendered
-    expect(wrapper.findAll('img').length).toEqual(1)
-    expect(wrapper.findAll('img').at(0).attributes('src')).toMatch('images/w-na.png')
+    // check that image is not rendered
+    expect(wrapper.findAll('img').length).toEqual(0)
 
-    // check that data for the dicription is displayed
-    expect(wrapper.findAll('p').length).toEqual(1)
-    expect(wrapper.findAll('p').at(0).text()).toMatch('')
+    // check that data for the dicription isn't displayed
+    expect(wrapper.findAll('p').length).toEqual(0)
 
-    // check that data for the temperature is displayed
+    // check that data for the temperature isn't displayed
     expect(wrapper.findAll('h1').length).toEqual(0)
+
+    // check that weather search header is displayed
+    expect(wrapper.findAll('h2').length).toEqual(1)
+    expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
   })
 
   it('processes valid props data', () => {
@@ -68,5 +70,8 @@ describe('Icon.vue Implementation Test', () => {
     // check that data for the temperature is displayed
     expect(wrapper.findAll('span').length).toEqual(1)
     expect(wrapper.findAll('span').at(0).text()).toMatch('27º')
+
+    // check that weather search header isn't displayed
+    expect(wrapper.findAll('h2').length).toEqual(0)
   })
 })

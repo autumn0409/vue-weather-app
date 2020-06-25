@@ -214,8 +214,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
     expect(wrapper.findAll('button').at(0).element.disabled).toBeTruthy()
     expect(wrapper.findAll('button').at(1).element.disabled).toBeTruthy()
 
-    // check that there is no h2 element
-    expect(wrapper.findAll('h2').length).toEqual(0)
+    // check that there is only 1 h2 element
+    expect(wrapper.findAll('h2').length).toEqual(1)
+    expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
 
     // check that 0 fields of weather data are displayed
     expect(wrapper.findAll('.weather-results').exists()).toBeFalsy()
