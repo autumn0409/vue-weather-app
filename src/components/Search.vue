@@ -98,6 +98,7 @@ export default {
   border-radius: 8px;
   border: none;
   margin: 6px;
+  width: 5rem;
 }
 
 .weather-search-buttons button:hover {
