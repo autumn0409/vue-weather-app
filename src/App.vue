@@ -63,7 +63,7 @@ export default {
   },
   created () {
     // Perform a check that the API key from openweathermap.org is defined
-    if (this.openweathermapApiKey === '') {
+    if (this.openweathermapApiKey === undefined) {
       this.messageType = 'Error'
       this.messageToDisplay =
         'Error! API Key needs to be loaded to use openweathermap.org!'
