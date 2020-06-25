@@ -1,8 +1,5 @@
 <template>
   <div class="weather-search">
-    <div class="weather-search-title">
-      <h2>Weather Search</h2>
-    </div>
     <div class="weather-search-input">
       <input
         type="text"
@@ -62,12 +59,6 @@ export default {
 *************************/
 .weather-search {
   margin: auto;
-}
-
-.weather-search-title h2 {
-  text-align: center;
-  margin-bottom: 0.5em;
-  color: aliceblue;
 }
 
 .weather-search-buttons {

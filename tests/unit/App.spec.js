@@ -214,9 +214,8 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
     expect(wrapper.findAll('button').at(0).element.disabled).toBeTruthy()
     expect(wrapper.findAll('button').at(1).element.disabled).toBeTruthy()
 
-    // check that there is only 1 h2 element
-    expect(wrapper.findAll('h2').length).toEqual(1)
-    expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
+    // check that there is no h2 element
+    expect(wrapper.findAll('h2').length).toEqual(0)
 
     // check that 0 fields of weather data are displayed
     expect(wrapper.findAll('.weather-results').exists()).toBeFalsy()
@@ -241,10 +240,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
 
     wrapper.vm.$nextTick().then(function () {
       // check that the heading text is rendered
-      expect(wrapper.findAll('h2').length).toEqual(3)
-      expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
-      expect(wrapper.findAll('h2').at(1).text()).toMatch('Weather Summary')
-      expect(wrapper.findAll('h2').at(2).text()).toMatch('Temperatures')
+      expect(wrapper.findAll('h2').length).toEqual(2)
+      expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Summary')
+      expect(wrapper.findAll('h2').at(1).text()).toMatch('Temperatures')
 
       // check that 6 fields of weather data are displayed
       expect(wrapper.findAll('.weather-results').exists()).toBeTruthy()

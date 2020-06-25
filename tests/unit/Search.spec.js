@@ -19,10 +19,6 @@ describe('Search.vue Implementation Test', () => {
     // check the name of the component
     expect(wrapper.name()).toMatch('Search')
 
-    // check that the heading text is rendered
-    expect(wrapper.findAll('h2').length).toEqual(1)
-    expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
-
     // check that 2 buttons are created and are disabled
     expect(wrapper.findAll('button').length).toEqual(2)
     expect(wrapper.findAll('button').at(0).text()).toMatch('Search')
