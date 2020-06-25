@@ -49,7 +49,7 @@ export default {
         currentTemperature: 0.0,
         highTemperature: 0.0,
         lowTemperature: 0.0,
-        group: 'clouds'
+        group: 'na'
       },
       // Flag indicating if valid weather data has been loaded
       validWeatherData: false,
@@ -119,7 +119,7 @@ export default {
         currentTemperature: 0.0,
         lowTemperature: 0.0,
         highTemperature: 0.0,
-        group: 'clouds'
+        group: 'na'
       }
       this.validWeatherData = false
     },
