@@ -47,9 +47,10 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
     // check the name of the component
     expect(wrapper.name()).toMatch('app')
 
-    // check that 3 of the 4 child components are rendered
+    // check that 4 of the 5 child components are rendered
     expect(wrapper.findAll('.header').exists()).toBeTruthy()
     expect(wrapper.findAll('.banner').exists()).toBeTruthy()
+    expect(wrapper.findAll('.weather-display').exists()).toBeTruthy()
     expect(wrapper.findAll('.weather-search').exists()).toBeTruthy()
     expect(wrapper.findAll('.weather-results').exists()).toBeFalsy()
 
@@ -218,7 +219,7 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
     expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
 
     // check that 0 fields of weather data are displayed
-    expect(wrapper.findAll('p').length).toEqual(1) // 1st element is the Banner Message
+    expect(wrapper.findAll('.weather-results').exists()).toBeFalsy()
 
     // check that background image is correctly rendered
     expect(document.body.className).toMatch('weather-bg na')
@@ -246,13 +247,15 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
       expect(wrapper.findAll('h2').at(2).text()).toMatch('Temperatures')
 
       // check that 6 fields of weather data are displayed
-      expect(wrapper.findAll('p').length).toEqual(7) // 1st element is the Banner Message
-      expect(wrapper.findAll('p').at(1).text()).toMatch('City: Chicago')
-      expect(wrapper.findAll('p').at(2).text()).toMatch('Summary: Cloudy')
-      expect(wrapper.findAll('p').at(3).text()).toMatch('Details: Cloudy with a chance of rain')
-      expect(wrapper.findAll('p').at(4).text()).toMatch('Current: 56.3° C')
-      expect(wrapper.findAll('p').at(5).text()).toMatch('High (Today): 58.6° C')
-      expect(wrapper.findAll('p').at(6).text()).toMatch('Low (Today): 53.8° C')
+      expect(wrapper.findAll('.weather-results').exists()).toBeTruthy()
+      const weatherResults = wrapper.findAll('.weather-results').at(0)
+      expect(weatherResults.findAll('p').length).toEqual(6)
+      expect(weatherResults.at(0).text()).toMatch('City: Chicago')
+      expect(weatherResults.at(1).text()).toMatch('Summary: Cloudy')
+      expect(weatherResults.at(2).text()).toMatch('Details: Cloudy with a chance of rain')
+      expect(weatherResults.at(3).text()).toMatch('Current: 56.3° C')
+      expect(weatherResults.at(4).text()).toMatch('High (Today): 58.6° C')
+      expect(weatherResults.at(5).text()).toMatch('Low (Today): 53.8° C')
 
       // check that the 3 buttons are enabled
       expect(wrapper.findAll('button').length).toEqual(3)
