@@ -9,7 +9,7 @@ describe('Icon.vue Implementation Test', () => {
     wrapper = shallowMount(Display, {
       propsData: {
         group: 'na',
-        description: 'Light Rain',
+        description: '',
         temp: 0.0
       }
     })
@@ -24,9 +24,9 @@ describe('Icon.vue Implementation Test', () => {
     // check the name of the component
     expect(wrapper.name()).toMatch('Display')
 
-    // check that each element of the user is initialized to empty strings
+    // check that each props of the component is initialized
     expect(wrapper.vm.group).toMatch('na')
-    expect(wrapper.vm.description).toMatch('')
+    expect(wrapper.vm.description).toMatch(/^$/)
     expect(wrapper.vm.temp).toBe(0.0)
 
     // check that image is not rendered
@@ -54,7 +54,7 @@ describe('Icon.vue Implementation Test', () => {
     // check the name of the component
     expect(wrapper.name()).toMatch('Display')
 
-    // check that each element of the user is initialized to empty strings
+    // check that each props of the component is setted
     expect(wrapper.vm.group).toMatch('rain')
     expect(wrapper.vm.description).toMatch('Light Rain')
     expect(wrapper.vm.temp).toBe(27)
