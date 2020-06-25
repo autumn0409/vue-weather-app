@@ -4,7 +4,6 @@
       <h2>Weather Search</h2>
     </div>
     <div class="weather-search-input">
-      <label for="cityInput">City:</label>
       <input
         type="text"
         id="cityInput"
@@ -77,12 +76,6 @@ export default {
 
 .weather-search-input {
   text-align: center;
-}
-
-.weather-search-input label {
-  font-size: 1.35em;
-  margin-right: 0.5em;
-  color: aliceblue;
 }
 
 .weather-search-input input {

@@ -23,10 +23,6 @@ describe('Search.vue Implementation Test', () => {
     expect(wrapper.findAll('h2').length).toEqual(1)
     expect(wrapper.findAll('h2').at(0).text()).toMatch('Weather Search')
 
-    // check that 1 label is created
-    expect(wrapper.findAll('label').length).toEqual(1)
-    expect(wrapper.findAll('label').at(0).text()).toMatch('City:')
-
     // check that 2 buttons are created and are disabled
     expect(wrapper.findAll('button').length).toEqual(2)
     expect(wrapper.findAll('button').at(0).text()).toMatch('Search')
