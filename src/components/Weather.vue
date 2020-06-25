@@ -101,7 +101,7 @@ export default {
   font-size: 1em;
   border-radius: 8px;
   border: none;
-  margin: 6px;
+  margin: 1.2rem;
 }
 
 .weather-results-buttons button:hover {
