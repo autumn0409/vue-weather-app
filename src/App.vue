@@ -14,12 +14,10 @@
       v-if="validWeatherData"
       v-on:clear-weather-data="resetData"
     ></app-weather-results>
-    <app-footer class="footer" v-bind:message="footerMessage"></app-footer>
   </div>
 </template>
 
 <script>
-import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Banner from '@/components/Banner.vue'
 import Search from '@/components/Search.vue'
@@ -30,7 +28,6 @@ export default {
   name: 'app',
   components: {
     'app-header': Header,
-    'app-footer': Footer,
     'app-banner': Banner,
     'app-weather-search': Search,
     'app-weather-results': Weather
@@ -39,8 +36,6 @@ export default {
     return {
       // Title of the application
       title: 'Vue Weather App',
-      // Message to display in the footer
-      footerMessage: 'testdriven.io 2020',
       // Weather data collected from openweathermap.org
       weatherData: {
         city: '',
