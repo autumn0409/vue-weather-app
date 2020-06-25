@@ -7,6 +7,12 @@
       v-bind:bannerType="messageType"
       v-on:clear-banner="clearMessage"
     ></app-banner>
+    <app-weather-display
+      class="weather-display"
+      v-bind:group="weatherData.group"
+      v-bind:description="weatherData.weatherDescription"
+      v-bind:temp="weatherData.currentTemperature"
+    ></app-weather-display>
     <app-weather-search class="weather-search" v-on:search-city="searchCity"></app-weather-search>
     <app-weather-results
       class="weather-results"
@@ -20,6 +26,7 @@
 <script>
 import Header from '@/components/Header.vue'
 import Banner from '@/components/Banner.vue'
+import Display from '@/components/Display.vue'
 import Search from '@/components/Search.vue'
 import Weather from '@/components/Weather.vue'
 import axios from 'axios'
@@ -29,6 +36,7 @@ export default {
   components: {
     'app-header': Header,
     'app-banner': Banner,
+    'app-weather-display': Display,
     'app-weather-search': Search,
     'app-weather-results': Weather
   },
@@ -169,6 +177,12 @@ body {
 .banner {
   grid-area: banner;
 }
+.weather-display {
+  grid-area: display;
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
+}
 .weather-search {
   grid-area: search;
 }
@@ -189,8 +203,8 @@ body {
   grid-template-areas:
     "header   header     header    header"
     "banner   banner     banner    banner"
+    "...      display    display   ..."
     "...      search     search    ..."
-    "...      results    results   ..."
-    "footer   footer     footer    footer";
+    "...      results    results   ...";
 }
 </style>
