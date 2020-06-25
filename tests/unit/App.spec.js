@@ -47,9 +47,8 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
     // check the name of the component
     expect(wrapper.name()).toMatch('app')
 
-    // check that 4 of the 5 child components are rendered
+    // check that 3 of the 4 child components are rendered
     expect(wrapper.findAll('.header').exists()).toBeTruthy()
-    expect(wrapper.findAll('.footer').exists()).toBeTruthy()
     expect(wrapper.findAll('.banner').exists()).toBeTruthy()
     expect(wrapper.findAll('.weather-search').exists()).toBeTruthy()
     expect(wrapper.findAll('.weather-results').exists()).toBeFalsy()
