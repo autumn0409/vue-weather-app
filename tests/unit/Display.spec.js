@@ -68,8 +68,8 @@ describe('Icon.vue Implementation Test', () => {
     expect(wrapper.findAll('p').at(0).text()).toMatch('Light Rain')
 
     // check that data for the temperature is displayed
-    expect(wrapper.findAll('span').length).toEqual(1)
-    expect(wrapper.findAll('span').at(0).text()).toMatch('27º')
+    expect(wrapper.findAll('h1').length).toEqual(1)
+    expect(wrapper.findAll('h1').at(0).text()).toMatch('27º C')
 
     // check that weather search header isn't displayed
     expect(wrapper.findAll('h2').length).toEqual(0)

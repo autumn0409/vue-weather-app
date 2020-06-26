@@ -3,8 +3,7 @@
     <img :src="'images/w-' + group + '.png'" alt />
     <p class="description">{{ description }}</p>
     <h1 class="temp">
-      <span class="display-3">{{ temp.toFixed(0) }}&ordm;</span>
-      &nbsp;C
+      <span class="display-3">{{ temp.toFixed(0) }}&ordm;</span> C
     </h1>
   </div>
   <div class="weather-display" v-else>
