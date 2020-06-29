@@ -127,6 +127,20 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
     expect(wrapper.vm.messageToDisplay).toMatch(/^$/)
     expect(wrapper.vm.messageType).toMatch('Info')
   })
+
+  it('show error message when api key is undefined', () => {
+    wrapper = shallowMount(App, {
+      data () {
+        return {
+          openweathermapApiKey: undefined
+        }
+      }
+    })
+
+    // check the banner message
+    expect(wrapper.vm.messageToDisplay).toMatch('Error! API Key needs to be loaded to use openweathermap.org!')
+    expect(wrapper.vm.messageType).toMatch('Error')
+  })
 })
 
 describe('Implementation Test for App.vue with Failed HTTP GET', () => {
