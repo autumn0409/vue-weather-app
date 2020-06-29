@@ -49,18 +49,18 @@ describe('Weather.vue Implementation Test', () => {
       city: 'Chicago',
       weatherSummary: 'Cloudy',
       weatherDescription: 'Cloudy with a chance of rain',
-      currentTemperature: 45.1,
-      lowTemperature: 42.0,
-      highTemperature: 47.7
+      currentTemperature: 25.3,
+      lowTemperature: 24.44,
+      highTemperature: 26.11
     })
 
     // check that the prop data is stored as expected within the component
     expect(wrapper.vm.city).toMatch('Chicago')
     expect(wrapper.vm.weatherSummary).toMatch('Cloudy')
     expect(wrapper.vm.weatherDescription).toMatch('Cloudy with a chance of rain')
-    expect(wrapper.vm.currentTemperature).toEqual(45.1)
-    expect(wrapper.vm.lowTemperature).toBeCloseTo(42.0)
-    expect(wrapper.vm.highTemperature).toBe(47.7)
+    expect(wrapper.vm.currentTemperature).toEqual(25.3)
+    expect(wrapper.vm.lowTemperature).toBeCloseTo(24.44)
+    expect(wrapper.vm.highTemperature).toBe(26.11)
 
     // check that the heading text is rendered
     expect(wrapper.findAll('h2').length).toEqual(2)
@@ -72,9 +72,9 @@ describe('Weather.vue Implementation Test', () => {
     expect(wrapper.findAll('p').at(0).text()).toMatch('City: Chicago')
     expect(wrapper.findAll('p').at(1).text()).toMatch('Summary: Cloudy')
     expect(wrapper.findAll('p').at(2).text()).toMatch('Details: Cloudy with a chance of rain')
-    expect(wrapper.findAll('p').at(3).text()).toMatch('Current: 45.1° C')
-    expect(wrapper.findAll('p').at(4).text()).toMatch('High (Today): 47.7° C')
-    expect(wrapper.findAll('p').at(5).text()).toMatch('Low (Today): 42° C')
+    expect(wrapper.findAll('p').at(3).text()).toMatch('Current: 25.3° C')
+    expect(wrapper.findAll('p').at(4).text()).toMatch('High (Today): 26.11° C')
+    expect(wrapper.findAll('p').at(5).text()).toMatch('Low (Today): 24.44° C')
   })
 
   it('emits a custom event when the Clear Weather Data button is clicked', () => {
