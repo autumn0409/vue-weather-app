@@ -269,4 +269,36 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
       expect(document.body.className).toMatch('weather-bg clouds')
     })
   })
+
+  it('displays the correct background image', () => {
+    const setGroup = (groupName) => {
+      wrapper.setData({
+        weatherData: {
+          ...wrapper.vm.weatherData,
+          group: groupName
+        }
+      })
+    }
+
+    setGroup(wrapper.vm.getWeatherGroup(201))
+    expect(document.body.className).toMatch('weather-bg thunderstorm')
+
+    setGroup(wrapper.vm.getWeatherGroup(300))
+    expect(document.body.className).toMatch('weather-bg drizzle')
+
+    setGroup(wrapper.vm.getWeatherGroup(501))
+    expect(document.body.className).toMatch('weather-bg rain')
+
+    setGroup(wrapper.vm.getWeatherGroup(600))
+    expect(document.body.className).toMatch('weather-bg snow')
+
+    setGroup(wrapper.vm.getWeatherGroup(702))
+    expect(document.body.className).toMatch('weather-bg atmosphere')
+
+    setGroup(wrapper.vm.getWeatherGroup(800))
+    expect(document.body.className).toMatch('weather-bg clear')
+
+    setGroup(wrapper.vm.getWeatherGroup(803))
+    expect(document.body.className).toMatch('weather-bg clouds')
+  })
 })
