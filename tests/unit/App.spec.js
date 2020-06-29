@@ -24,9 +24,9 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
           }
         ],
         main: {
-          temp: 56.3,
-          temp_min: 53.8,
-          temp_max: 58.6
+          temp: 25.3,
+          temp_min: 24.44,
+          temp_max: 26.11
         }
       }
     }
@@ -76,9 +76,9 @@ describe('Implementation Test for App.vue with Successful HTTP GET', () => {
       expect(wrapper.vm.weatherData.city).toMatch('Chicago')
       expect(wrapper.vm.weatherData.weatherSummary).toMatch('Cloudy')
       expect(wrapper.vm.weatherData.weatherDescription).toMatch('Cloudy with a chance of rain')
-      expect(wrapper.vm.weatherData.currentTemperature).toEqual(56.3)
-      expect(wrapper.vm.weatherData.lowTemperature).toEqual(53.8)
-      expect(wrapper.vm.weatherData.highTemperature).toEqual(58.6)
+      expect(wrapper.vm.weatherData.currentTemperature).toEqual(25.3)
+      expect(wrapper.vm.weatherData.lowTemperature).toEqual(24.44)
+      expect(wrapper.vm.weatherData.highTemperature).toEqual(26.11)
       expect(wrapper.vm.weatherData.group).toMatch('clouds')
       expect(wrapper.vm.validWeatherData).toBe(true)
     })
@@ -187,9 +187,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
           }
         ],
         main: {
-          temp: 56.3,
-          temp_min: 53.8,
-          temp_max: 58.6
+          temp: 25.3,
+          temp_min: 24.44,
+          temp_max: 26.11
         }
       }
     }
@@ -252,9 +252,9 @@ describe('Behavioral Test for App.vue with Successful HTTP GET', () => {
       expect(weatherResults.at(0).text()).toMatch('City: Chicago')
       expect(weatherResults.at(1).text()).toMatch('Summary: Cloudy')
       expect(weatherResults.at(2).text()).toMatch('Details: Cloudy with a chance of rain')
-      expect(weatherResults.at(3).text()).toMatch('Current: 56.3° C')
-      expect(weatherResults.at(4).text()).toMatch('High (Today): 58.6° C')
-      expect(weatherResults.at(5).text()).toMatch('Low (Today): 53.8° C')
+      expect(weatherResults.at(3).text()).toMatch('Current: 25.3° C')
+      expect(weatherResults.at(4).text()).toMatch('High (Today): 26.11° C')
+      expect(weatherResults.at(5).text()).toMatch('Low (Today): 24.44° C')
 
       // check that the 3 buttons are enabled
       expect(wrapper.findAll('button').length).toEqual(3)
