@@ -71,17 +71,7 @@ $ vue --version
 
 #### Working with the Vue Weather App
 
-If you would like to run the Vue Weather App on your local machine, you will need to follow these instructions:
-
-```sh
-git clone git@gitlab.com:patkennedy79/vue-weather-app.git
-cd vue-weather-app
-sudo npm install
-```
-
-The installation of the Vue CLI requires administrative privileges (so you may need to run with 'sudo').
-
-Additionally, you will need to create a free account at [Open Weather](https://openweathermap.org) and get an API key for using their API service.  The API key can be found in your account page under the 'API Keys' tab.  The API key needs to be included in the `App` component (defined in /src/App.vue) in the data section:
+We will need to create a free account at [Open Weather](https://openweathermap.org) and get an API key for using their API service.  The API key can be found in your account page under the 'API Keys' tab.  The API key needs to be included in the `App` component (defined in /src/App.vue) in the data section:
 
 ```javascript
 // API key from openweathermap.org - Unique to each person
