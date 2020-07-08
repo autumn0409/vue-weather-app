@@ -2,17 +2,11 @@
 
 ## Overview
 
-The Vue Weather App is the application created for the following blog post on [TestDriven.io](https://testdriven.io):
-
-[A Guide to Unit Testing Vue Components](https://testdriven.io/blog/)
+The Vue Weather App is the application created for the software testing final project:
 
 ## Description
 
-The Vue Weather App allows the user to search for the current weather for a city.  This application was developed to provide examples of how to unit test Vue components.
-
-## Example
-
-![Alt text](/blogpost_screenshots/VueWeatherApp_Walkthrough_Step4.png?raw=true "Vue Weather App Example")
+The Vue Weather App allows the user to search for the current weather for a city.  
 
 ## Installation Instructions
 
