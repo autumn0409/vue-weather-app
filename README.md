@@ -19,12 +19,6 @@ The Vue CLI requires the following tools be installed first (pre-requisites):
 * Node (JavaScript runtime)
 * npm (Node Package Manager)
 
-The Vue CLI is a package that you install using `npm`.  Instead of creating a whole new toolchain for the Vue CLI, the creators of the tool are taking advantage of an existing ecosystem (npm) to develop the set of tools to help develop Vue applications.
-
-The first step in this installation process is downloading Node and npm (Node Package Manager); they are conveniently installed together.
-
-After the installation is complete, you can check that Node is installed by going to your command line (i.e., terminal) and checking the version of Node and npm that are installed:
-
 ```sh
 $ node -v
 v10.16.0
@@ -36,8 +30,6 @@ $ npm -v
 ```sh
 npm install -g @vue/cli
 ```
-
-After the installation is complete, you can check that you have access to the `vue` command:
 
 ```sh
 $ vue --version
