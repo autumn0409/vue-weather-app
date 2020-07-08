@@ -2,9 +2,7 @@
 
 ## Overview
 
-The Vue Weather App is the application created for the software testing final project:
-
-## Description
+The Vue Weather App is the application created for the software testing final project.
 
 The Vue Weather App allows the user to search for the current weather for a city.  
 
