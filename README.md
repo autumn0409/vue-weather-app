@@ -23,20 +23,6 @@ The Vue CLI is a package that you install using `npm`.  Instead of creating a wh
 
 The first step in this installation process is downloading Node and npm (Node Package Manager); they are conveniently installed together.
 
-As of January 2020, the Vue CLI requires that you have Node v8.9 or higher.  To install Node and npm, start by going to the [NodeJS website](https://nodejs.org/en/):
-
-![Alt text](/blogpost_screenshots/Chapter12_NodeJS_Website.png?raw=true "NodeJS Website")
-
-I would recommend installing the current LTS (Long-Term Support) version of Node.  We are using Node to help us install the Vue CLI, so we don't need the latest features of Node.  It's best to stick with a stable build for this situation.
-
-Once you download the installation file, you should see a window similar to this:
-
-![Alt text](/blogpost_screenshots/Chapter12_NodeJS_Installation.png?raw=true "NodeJS Installation")
-
-This installation window is for MacOS, but it illustrates that Node and npm are being installed together.
-
-Follow the instructions for installing Node/npm, which will be different depending on the operating system (MacOS, Windows, Linux, etc.) that you are using.
-
 After the installation is complete, you can check that Node is installed by going to your command line (i.e., terminal) and checking the version of Node and npm that are installed:
 
 ```sh
@@ -47,20 +33,9 @@ $ npm -v
 6.10.1
 ```
 
-Now that Node and npm are installed, we are ready to install the Vue CLI.  The installation of the Vue CLI requires administrative privileges (so you may need to run with 'sudo'):
-
 ```sh
 npm install -g @vue/cli
 ```
-
-This command to install the Vue CLI is using `npm` to globally (`-g` flag) install the Vue CLI package.
-
-> Note: These installation instructions assume that you are performing a new installation of the Vue CLI.
->
-> There was a significant change in the Vue CLI between v2 and v3, as the package name changed from vue-cli to @vue/cli.
->
-> If you worked with the older version (v1.x or v2.x) of the Vue CLI in the past, you need to uninstall it first using:
-> `npm uninstall vue-cli -g`
 
 After the installation is complete, you can check that you have access to the `vue` command:
 
